@@ -1,0 +1,218 @@
+This is first git lecture
+
+
+controlplane $ apt install git
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Suggested packages:
+  git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+The following packages will be upgraded:
+  git
+1 upgraded, 0 newly installed, 0 to remove and 185 not upgraded.
+Need to get 4612 kB of archives.
+After this operation, 287 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 git amd64 1:2.25.1-1ubuntu3.13 [4612 kB]
+Fetched 4612 kB in 1s (8645 kB/s)
+(Reading database ... 132638 files and directories currently installed.)
+Preparing to unpack .../git_1%3a2.25.1-1ubuntu3.13_amd64.deb ...
+Unpacking git (1:2.25.1-1ubuntu3.13) over (1:2.25.1-1ubuntu3.6) ...
+Setting up git (1:2.25.1-1ubuntu3.13) ...
+controlplane $ mkdir /tmp/projectx
+controlplane $ cd /tmp/projectx
+controlplane $ pwd
+/tmp/projectx
+controlplane $ ls -lah
+total 8.0K
+drwxr-xr-x  2 root root 4.0K Feb  3 14:25 .
+drwxrwxrwt 22 root root 4.0K Feb  3 14:26 ..
+controlplane $ git init
+Initialized empty Git repository in /tmp/projectx/.git/
+controlplane $ git config --global user.name prashant
+controlplane $ git config --global user.email pashan@gmail.com
+controlplane $ ls -lah
+total 12K
+drwxr-xr-x  3 root root 4.0K Feb  3 14:26 .
+drwxrwxrwt 22 root root 4.0K Feb  3 14:26 ..
+drwxr-xr-x  7 root root 4.0K Feb  3 14:26 .git
+controlplane $ cd
+controlplane $ pwd
+/root
+controlplane $ ls -lah
+total 80K
+drwx------ 12 root root 4.0K Feb  3 14:26 .
+drwxr-xr-x 20 root root 4.0K Feb  3 14:23 ..
+-rw-------  1 root root  342 Feb  3 14:20 .ICEauthority
+-rw-------  1 root root   57 Feb  3 14:20 .Xauthority
+-rw-------  1 root root   20 Nov 13  2022 .bash_history
+-rw-r--r--  1 root root 3.3K Jan 28 16:06 .bashrc
+drwx------  7 root root 4.0K Feb  3 14:21 .cache
+drwxr-xr-x  8 root root 4.0K Feb  3 14:21 .config
+drwx------  3 root root 4.0K Feb  3 14:20 .dbus
+-rw-r--r--  1 root root   50 Feb  3 14:26 .gitconfig
+drwx------  3 root root 4.0K Feb  3 14:20 .gnupg
+drwxr-xr-x  3 root root 4.0K Jan 28 16:04 .kube
+drwxr-xr-x  3 root root 4.0K Feb  3 14:20 .local
+-rw-r--r--  1 root root  161 Dec  5  2019 .profile
+drwx------  2 root root 4.0K Jan 28 15:56 .ssh
+drwxr-xr-x  4 root root 4.0K Feb  3 14:24 .theia
+-rw-r--r--  1 root root   45 Feb  3 14:23 .vimrc
+drwxr-xr-x  2 root root 4.0K Feb  3 14:20 .vnc
+-rw-r--r--  1 root root  165 Jan 28 16:03 .wget-hsts
+lrwxrwxrwx  1 root root    1 Jan 28 15:57 filesystem -> /
+drwx------  3 root root 4.0K Jan 28 16:02 snap
+controlplane $ cd /tmp/projectx
+controlplane $ pwd
+/tmp/projectx
+controlplane $ ls
+controlplane $ ls -lah
+total 12K
+drwxr-xr-x  3 root root 4.0K Feb  3 14:26 .
+drwxrwxrwt 22 root root 4.0K Feb  3 14:27 ..
+drwxr-xr-x  7 root root 4.0K Feb  3 14:26 .git
+controlplane $ cd .git/
+controlplane $ ls
+HEAD  branches  config  description  hooks  info  objects  refs
+controlplane $ pwd
+/tmp/projectx/.git
+controlplane $ cd ..   
+controlplane $ pwd
+/tmp/projectx
+controlplane $ touch sample.txt
+controlplane $ touch unnati.txt
+controlplane $ ls -ld
+drwxr-xr-x 3 root root 4096 Feb  3 14:28 .
+controlplane $ ls -l 
+total 0
+-rw-r--r-- 1 root root 0 Feb  3 14:28 sample.txt
+-rw-r--r-- 1 root root 0 Feb  3 14:28 unnati.txt
+controlplane $ echo "This is sample file 1" > sample.txt 
+controlplane $ echo "This is not unnati file 1" > sample.txt 
+controlplane $ echo "This is sample file 1" >> sample.txt 
+controlplane $ echo "This is not unnati file 1" >> sample.txt 
+controlplane $ echo "This is  unnati file 1" > unnati.txt 
+controlplane $ echo "This is  unnati file 1" >> unnati.txt 
+controlplane $ echo "This is  not sample file 1" >> unnati.txt 
+controlplane $ cat unnati.txt 
+This is  unnati file 1
+This is  unnati file 1
+This is  not sample file 1
+controlplane $ cat sample.txt 
+This is not unnati file 1
+This is sample file 1
+This is not unnati file 1
+controlplane $ git add sample.txt 
+controlplane $ git add unnati.txt 
+controlplane $ touch myfile.txt
+controlplane $ ls
+myfile.txt  sample.txt  unnati.txt
+controlplane $ ls -lah
+total 20K
+drwxr-xr-x  3 root root 4.0K Feb  3 14:30 .
+drwxrwxrwt 22 root root 4.0K Feb  3 14:31 ..
+drwxr-xr-x  7 root root 4.0K Feb  3 14:30 .git
+-rw-r--r--  1 root root    0 Feb  3 14:30 myfile.txt
+-rw-r--r--  1 root root   74 Feb  3 14:29 sample.txt
+-rw-r--r--  1 root root   73 Feb  3 14:29 unnati.txt
+controlplane $ cd .git
+controlplane $ ls
+HEAD  branches  config  description  hooks  index  info  objects  refs
+controlplane $ cd ..
+controlplane $ echo "new lines  4">> unnati.txt 
+controlplane $ echo "new lines  5">> unnati.txt 
+controlplane $ ls -lah
+total 20K
+drwxr-xr-x  3 root root 4.0K Feb  3 14:30 .
+drwxrwxrwt 22 root root 4.0K Feb  3 14:32 ..
+drwxr-xr-x  7 root root 4.0K Feb  3 14:30 .git
+-rw-r--r--  1 root root    0 Feb  3 14:30 myfile.txt
+-rw-r--r--  1 root root   74 Feb  3 14:29 sample.txt
+-rw-r--r--  1 root root   99 Feb  3 14:31 unnati.txt
+controlplane $ git status 
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   sample.txt
+        new file:   unnati.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   unnati.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        myfile.txt
+
+controlplane $ git diff unnati.txt
+diff --git a/unnati.txt b/unnati.txt
+index c5e6ed7..09b04a3 100644
+--- a/unnati.txt
++++ b/unnati.txt
+@@ -1,3 +1,5 @@
+ This is  unnati file 1
+ This is  unnati file 1
+ This is  not sample file 1
++new lines  4
++new lines  5
+controlplane $ cat unnati.txt 
+This is  unnati file 1
+This is  unnati file 1
+This is  not sample file 1
+new lines  4
+new lines  5
+controlplane $ git log
+fatal: your current branch 'master' does not have any commits yet
+controlplane $ git commit -m "My first commit"
+[master (root-commit) 7e33ca5] My first commit
+ 2 files changed, 6 insertions(+)
+ create mode 100644 sample.txt
+ create mode 100644 unnati.txt
+controlplane $ git log
+commit 7e33ca5da3fb4850406425bd3c78a4486898b571 (HEAD -> master)
+Author: prashant <pashan@gmail.com>
+Date:   Mon Feb 3 14:37:01 2025 +0000
+
+    My first commit
+controlplane $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   unnati.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        myfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+controlplane $ git add . 
+controlplane $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   myfile.txt
+        modified:   unnati.txt
+
+controlplane $ git commit -m " my second commit (in this all is commited)"
+[master e91a237]  my second commit (in this all is commited)
+ 2 files changed, 2 insertions(+)
+ create mode 100644 myfile.txt
+controlplane $ git log
+commit e91a237158d76a0e9249867545cda3aee04f314f (HEAD -> master)
+Author: prashant <pashan@gmail.com>
+Date:   Mon Feb 3 14:40:14 2025 +0000
+
+     my second commit (in this all is commited)
+
+commit 7e33ca5da3fb4850406425bd3c78a4486898b571
+Author: prashant <pashan@gmail.com>
+Date:   Mon Feb 3 14:37:01 2025 +0000
+
+    My first commit
+controlplane $ 
+
+
